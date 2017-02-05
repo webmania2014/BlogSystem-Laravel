@@ -29,6 +29,9 @@
             {!! Form::submit('Delete', ['class' => 'btn btn-danger btn-block']) !!}
             {!! Form::close() !!}
           </div>
+          <div class="col-sm-12">
+            {!! Html::linkRoute('posts.index', '<< See All Posts', [], ['class' => 'btn btn-default btn-block']) !!}
+          </div>
         </div>
       </div>
     </div>
