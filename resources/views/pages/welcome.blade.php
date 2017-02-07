@@ -1,6 +1,6 @@
 @extends('main')
 @section('title', '| Homepage')
-@section('nav-active', 'class="active"');
+@section('nav-active', 'class="active"')
 @section('content')
   <div class="row">
     <div class="col-md-12">
