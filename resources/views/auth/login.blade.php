@@ -15,7 +15,7 @@
         {{ Form::password('password', ['class' => 'form-control']) }}
 
         <br>
-        {{ Form::checkbox('remember') }}{{ Form::label('remember', Remember) }}
+        {{ Form::checkbox('remember') }}{{ Form::label('remember', 'Remember') }}
 
         <br>
         {{ Form::submit('Login', ['class' => 'btn btn-primary btn-block']) }}
