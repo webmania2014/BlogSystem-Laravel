@@ -14,7 +14,7 @@
 // Authentication routes
 Route::get('auth/login', ['as' => 'login', 'uses' => 'Auth\LoginController@showLoginForm']);
 Route::post('auth/login', 'Auth\LoginController@login');
-Route::get('auth/logout', ['as' => 'logout', 'uses' => 'Auth\LoginController@logout']);
+Route::get('auth/logout', 'Auth\LoginController@logout')->name('logout');
 
 // Registeration routes
 Route::get('auth/register', 'Auth\RegisterController@showRegistrationForm')->name('register');
