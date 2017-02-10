@@ -26,9 +26,12 @@ Route::get('password/reset/{token?}', 'Auth\ResetPasswordController@showResetFor
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail');
 Route::post('password/reset', ['as' => 'password.reset', 'uses' => 'Auth\ResetPasswordController@reset']);
 
+Route::resource('categories', 'CategoryController', ['except' => ['create']]);
+
 Route::get('blog/{slug}', ['as' => 'blog.single', 'uses' => 'BlogController@getSingle'])->where('slug', '[\w\d\-\_]+');
 Route::get('blog', ['as' => 'blog.index', 'uses' => 'BlogController@getIndex']);
 Route::get('/', 'PagesController@getIndex');
 Route::get('about', 'PagesController@getAbout');
 Route::get('contact', 'PagesController@getContact');
+
 Route::resource('posts', 'PostController');
