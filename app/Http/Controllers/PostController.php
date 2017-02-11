@@ -155,7 +155,7 @@ class PostController extends Controller
         } else {
           $post->tags()->sync(array());
         }
-        
+
         // Session flash for sucess message
         Session::flash('success', 'The blog post was successfully save!');
 
@@ -172,6 +172,8 @@ class PostController extends Controller
     public function destroy($id)
     {
         $post = Post::find($id);
+        $post->tags()->detach();
+
         $post->delete();
 
         Session::flash('success', 'The post was successfully deleted.');
