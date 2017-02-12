@@ -32,6 +32,14 @@ Route::resource('categories', 'CategoryController', ['except' => ['create']]);
 // Tags controller
 Route::resource('tags', 'TagController', ['except' => ['create']]);
 
+// Comment controller
+Route::post('comments/{post_id}', ['uses' => 'CommentsController@store', 'as' => 'comments.store']);
+Route::get('commenets/{id}/edit', ['uses' => 'CommentsController@edit', 'as' => 'comments.edit']);
+Route::get('commenets/{id}', ['uses' => 'CommentsController@update', 'as' => 'comments.update']);
+Route::put('commenets/{id}', ['uses' => 'CommentsController@update', 'as' => 'comments.update']);
+Route::delete('commenets/{id}', ['uses' => 'CommentsController@destroy', 'as' => 'comments.destroy']);
+Route::get('commenets/{id}/delete', ['uses' => 'CommentsController@delete', 'as' => 'comments.delete']);
+
 Route::get('blog/{slug}', ['as' => 'blog.single', 'uses' => 'BlogController@getSingle'])->where('slug', '[\w\d\-\_]+');
 Route::get('blog', ['as' => 'blog.index', 'uses' => 'BlogController@getIndex']);
 Route::get('/', 'PagesController@getIndex')->name('page.index');
